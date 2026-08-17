@@ -1,1 +1,0 @@
-#define trial 0
