@@ -1,0 +1,22 @@
+# ninja log v7
+1	103	8086504244453183	build.ninja	aa86ee879ac6dfe0
+1	103	8086504244342837	D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/cmake_install.cmake	aa86ee879ac6dfe0
+1	103	8086504244342837	D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/abstraction/cmake_install.cmake	aa86ee879ac6dfe0
+1	103	8086504244342837	D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/board_config/cmake_install.cmake	aa86ee879ac6dfe0
+1	103	8086504244342837	D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/infrastructure_gpio/cmake_install.cmake	aa86ee879ac6dfe0
+1	103	8086504244412205	D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/application/cmake_install.cmake	aa86ee879ac6dfe0
+1	103	8086504244423194	D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/main/cmake_install.cmake	aa86ee879ac6dfe0
+22	51	8086497890900175	CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj	1c85d1faf6328986
+22	103	8086492664921000	components/infrastructure_gpio/CMakeFiles/infrastructure_gpio.dir/src/gpio_led.cpp.obj	e46a2f406298581d
+40	106	8086494068751479	main/CMakeFiles/app_main.dir/main.cpp.obj	2c3e66c7e1bd306f
+22	189	8086492901640504	components/infrastructure_gpio/libinfrastructure_gpio.a	11898ef59d9979c4
+18	86	8086493272294193	components/application/CMakeFiles/application.dir/src/blink_use_case.cpp.obj	5b026abb270b38cf
+87	150	8086493272919341	components/application/libapplication.a	27e798cd858b71fb
+160	226	8086494385789094	main/libapp_main.a	40e17b8213b493e9
+19	85	8086502185887426	components/platform/CMakeFiles/platform.dir/src/system_stm32f4xx.cpp.obj	5bbc68a88a872713
+23	92	8086494384399548	components/platform/CMakeFiles/platform.dir/src/cxx_runtime.cpp.obj	a70a8639cee13290
+85	154	8086502186536675	components/platform/libplatform.a	f1fc52c8ef2eea6f
+154	281	8086502187162366	nucleo_f411_blink.elf	dcb9d0a176c8b643
+26	94	8086504264425883	components/platform/CMakeFiles/platform.dir/src/system_stm32f4xx.cpp.obj	5bbc68a88a872713
+94	163	8086504265057846	components/platform/libplatform.a	f1fc52c8ef2eea6f
+163	290	8086504265792209	nucleo_f411_blink.elf	dcb9d0a176c8b643

@@ -1,0 +1,13 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/cmake_install.cmake",
+		"D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/abstraction/cmake_install.cmake",
+		"D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/board_config/cmake_install.cmake",
+		"D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/platform/cmake_install.cmake",
+		"D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/infrastructure_gpio/cmake_install.cmake",
+		"D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/application/cmake_install.cmake",
+		"D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/main/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "abstraction/gpio.hpp
+#include "gpio.hpp"
 #include <stdint.h>
 
-namespace infractructure_gpio
+namespace infrastructure_gpio
 {
     class GPIO_LED : public abstraction::GPIO
     {

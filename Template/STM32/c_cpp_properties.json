@@ -3,19 +3,25 @@
     "configurations": [
         {
             "name": "NUCLEO-F411RE",
-            "compilerPath": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/12.2 mpacbti-rel1/bin/arm-none-eabi-gcc.exe",
+
+            "compilerPath": "C:/Program Files (x86)/Arm GNU Toolchain/12.2 mpacbti-rel1/bin/arm-none-eabi-g++.exe",
+
             "compilerArgs": [
                 "-mcpu=cortex-m4",
                 "-mthumb",
                 "-mfpu=fpv4-sp-d16",
                 "-mfloat-abi=soft"
             ],
+
             "cStandard": "gnu11",
             "cppStandard": "gnu++17",
+
             "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+
             "defines": [
                 "STM32F411xE"
             ],
+
             "includePath": [
                 "${workspaceFolder}/components/abstraction/include",
                 "${workspaceFolder}/components/board_config/include",
@@ -24,6 +30,7 @@
                 "${workspaceFolder}/components/application/include",
                 "${workspaceFolder}/components/main"
             ],
+
             "browse": {
                 "path": [
                     "${workspaceFolder}/components",

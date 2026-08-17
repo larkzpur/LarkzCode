@@ -1,156 +1,204 @@
-#include "platform/system.hpp"
+#include "system.hpp"
 #include <stdint.h>
 
-#define PERIPH_BASE           ((uint32_t)0x40000000UL)
-#define AHB1PERIPH_BASE       (PERIPH_BASE + 0x00020000UL)
-#define APB1PERIPH_BASE       (PERIPH_BASE + 0x00000000UL)
+#define PERIPH_BASE             ((uint32_t)0x40000000UL)
 
-#define RCC_BASE             (AHB1PERIPH_BASE + 0x00003800UL)
-#define FLASH_R_BASE           (AHB1PERIPH_BASE + 0x00003C00UL)
+#define AHB1PERIPH_BASE         (PERIPH_BASE + 0x00020000UL)
+#define APB1PERIPH_BASE         (PERIPH_BASE + 0x00000000UL)
 
-#define PWR_BASE             (APB1PERIPH_BASE + 0x00007000UL)
+#define RCC_BASE                (AHB1PERIPH_BASE + 0x00003800UL)
+#define FLASH_R_BASE            (AHB1PERIPH_BASE + 0x00003C00UL)
+#define PWR_BASE                (APB1PERIPH_BASE + 0x00007000UL)
 
-#define RCC_CR (*(volatile uint32_t *)(RCC_BASE + 0x00UL))
-#define RCC_PLLCFGR (*(volatile uint32_t *)(RCC_BASE + 0x04UL))
-#define RCC_CFGR (*(volatile uint32_t *)(RCC_BASE + 0x08UL))
-#define RCC_AHB1ENR (*(volatile uint32_t *)(RCC_BASE + 0x40UL))
+/* RCC registers */
+#define RCC_CR                  (*(volatile uint32_t *)(RCC_BASE + 0x00UL))
+#define RCC_PLLCFGR             (*(volatile uint32_t *)(RCC_BASE + 0x04UL))
+#define RCC_CFGR                (*(volatile uint32_t *)(RCC_BASE + 0x08UL))
+#define RCC_AHB1ENR             (*(volatile uint32_t *)(RCC_BASE + 0x30UL))
+#define RCC_APB1ENR             (*(volatile uint32_t *)(RCC_BASE + 0x40UL))
 
-#define PWR_CR (*(volatile uint32_t *)(PWR_BASE + 0x00UL))
-#define FLASH_ACR (*(volatile uint32_t *)(FLASH_R_BASE + 0x00UL))
+/* PWR registers */
+#define PWR_CR                  (*(volatile uint32_t *)(PWR_BASE + 0x00UL))
 
-#define RCC_CR_HSION (1U << 0)
-#define RCC_CR_HSIRDY (1U << 1)
-#define RCC_CR_PLLON (1U << 24)
-#define RCC_CR_PLLRDY (1U << 25)
+/* FLASH registers */
+#define FLASH_ACR               (*(volatile uint32_t *)(FLASH_R_BASE + 0x00UL))
 
-#define RCC_CFGR_SW_MASK (3UL << 0)
-#define RCC_CFGR_SW_HSI (0UL << 0)
-#define RCC_CFGR_SW_PLL (2UL << 0)
-#define RCC_CFGR_SWS_MASK (3UL << 2)
-#define RCC_CFGR_SWS_HSI (0UL << 2)
-#define RCC_CFGR_SWS_PLL (2UL << 2)
-#define RCC_CFGR_PPRE1_2 (4UL << 10)
+/* RCC_CR bits */
+#define RCC_CR_HSION            (1UL << 0)
+#define RCC_CR_HSIRDY           (1UL << 1)
+#define RCC_CR_PLLON            (1UL << 24)
+#define RCC_CR_PLLRDY           (1UL << 25)
 
-#define RCC_APB1ENR_PWREN (1UL << 28)
+/* RCC_CFGR bits */
+#define RCC_CFGR_SW_MASK        (3UL << 0)
+#define RCC_CFGR_SW_HSI         (0UL << 0)
+#define RCC_CFGR_SW_PLL         (2UL << 0)
 
-#define PWR_CR_VOS_MASK (3UL << 14)
-#define PWR_CR_VOS_SCALE2 (2UL << 14)
+#define RCC_CFGR_SWS_MASK       (3UL << 2)
+#define RCC_CFGR_SWS_HSI        (0UL << 2)
+#define RCC_CFGR_SWS_PLL        (2UL << 2)
 
-#define FLASH_ACR_LATENCY_2WS (2UL << 0)
-#define FLASH_ACR_LATERNCY_1WS (1UL << 0)
-#define FLASH_ACR_PRFTEN (1UL << 8)
-#define FLASH_ACR_ICEN (1UL << 9)
-#define FLASH_ACR_DCEN (1UL << 10)
+#define RCC_CFGR_PPRE1_2        (4UL << 10)
 
-#if !defined(USE_SYSCLK_84MHZ) && !defined(USE_SYSCLK_42MHZ)
-static void set_sysclk_16mhz_hsi(void)
-{
-    // Enable HSI
-    RCC_CR |= RCC_CR_HSION;
-    while (!(RCC_CR & RCC_CR_HSIRDY)==0U)
-        ;
+/* RCC_APB1ENR bits */
+#define RCC_APB1ENR_PWREN       (1UL << 28)
 
-    // Set HSI as system clock
-    RCC_CFGR &= ~RCC_CFGR_SW_MASK;
-    RCC_CFGR |= RCC_CFGR_SW_HSI;
-    while ((RCC_CFGR & RCC_CFGR_SWS_MASK) != RCC_CFGR_SWS_HSI)
-        ;
-    
-    RCC_CR &= ~RCC_CR_PLLON; // Disable PLL
-    while ((RCC_CR & RCC_CR_PLLRDY) != 0U)
-        ;   
-}
-#endif
+/* PWR_CR bits */
+#define PWR_CR_VOS_MASK         (3UL << 14)
+#define PWR_CR_VOS_SCALE2       (2UL << 14)
 
-#ifdef USE_SYSCLK_84MHZ
+/* FLASH_ACR bits */
+#define FLASH_ACR_LATENCY_MASK  (7UL << 0)
+#define FLASH_ACR_LATENCY_2WS   (2UL << 0)
+#define FLASH_ACR_PRFTEN        (1UL << 8)
+#define FLASH_ACR_ICEN          (1UL << 9)
+#define FLASH_ACR_DCEN          (1UL << 10)
+
+
 static void set_sysclk_84mhz_pll_from_hsi(void)
 {
     uint32_t pllcfgr;
 
-    RCC_CR |= RCC_CR_HSION; // Enable HSI
-    while (!(RCC_CR & RCC_CR_HSIRDY)==0U)
+    /*
+     * HSI
+     * ---
+     * STM32F411 HSI = 16 MHz
+     *
+     * Wait until HSI is ready.
+     */
+    while ((RCC_CR & RCC_CR_HSIRDY) == 0U)
+    {
         ;
-    
-    RCC_APB1ENR |= RCC_APB1ENR_PWREN; // Enable PWR clock
-    PWR_CR &= ~PWR_CR_VOS_MASK; // Clear VOS bits
-    PWR_CR |= PWR_CR_VOS_SCALE2; // Set VOS to Scale 2 mode
+    }
 
-    FLASH_ACR |= FLASH_ACR_LATENCY_2WS | FLASH_ACR_PRFTEN | FLASH_ACR_ICEN | FLASH_ACR_DCEN; // Set flash latency and enable caches
+    /*
+     * Enable PWR peripheral clock.
+     */
+    RCC_APB1ENR |= RCC_APB1ENR_PWREN;
 
-    RCC_CR &= ~RCC_CR_PLLON; // Disable PLL
+    /*
+     * Configure voltage scaling.
+     */
+    PWR_CR &= ~PWR_CR_VOS_MASK;
+    PWR_CR |= PWR_CR_VOS_SCALE2;
+
+    /*
+     * Configure Flash:
+     *
+     * 84 MHz requires 2 wait states.
+     */
+    FLASH_ACR &= ~FLASH_ACR_LATENCY_MASK;
+
+    FLASH_ACR |=
+        FLASH_ACR_LATENCY_2WS |
+        FLASH_ACR_PRFTEN |
+        FLASH_ACR_ICEN |
+        FLASH_ACR_DCEN;
+
+    /*
+     * Disable PLL before reconfiguration.
+     */
+    RCC_CR &= ~RCC_CR_PLLON;
+
+    /*
+     * Wait until PLL is completely stopped.
+     */
     while ((RCC_CR & RCC_CR_PLLRDY) != 0U)
+    {
         ;
-    
-    /* HSI=16MHz, PLLM=16, PLLN=336, PLLP=2, PLLQ=7 */
-    //pllcfgr = (16U << 0) | (336U << 6) | (0U << 16) | (2U << 24) | (7U << 24);
-    pllcfgr = (16U << 0);
-    pllcfgr |= (336U << 6);
+    }
+
+    /*
+     * PLL configuration
+     *
+     * HSI  = 16 MHz
+     *
+     * PLLM = 16
+     * PLLN = 336
+     * PLLP = 2
+     * PLLQ = 7
+     *
+     * VCO input:
+     *
+     *     16 MHz / 16 = 1 MHz
+     *
+     * VCO output:
+     *
+     *     1 MHz * 336 = 336 MHz
+     *
+     * SYSCLK:
+     *
+     *     336 MHz / 2 = 168 MHz
+     *
+     * NOTE:
+     * The above calculation gives 168 MHz, not 84 MHz.
+     *
+     * Therefore PLLN must be 168 for 84 MHz:
+     *
+     *     (16 / 16) * 168 / 2 = 84 MHz
+     */
+
+    pllcfgr = 0U;
+
+    /* PLLM = 16 */
+    pllcfgr |= (16U << 0);
+
+    /* PLLN = 168 */
+    pllcfgr |= (168U << 6);
+
+    /* PLLP = 2 (00b) */
     pllcfgr |= (0U << 16);
-    pllcfgr |= (0U << 16); // PLLP=2 (00)
-    pllcfgr |= (7U << 24); // PLLQ=7
+
+    /* PLLQ = 7 */
+    pllcfgr |= (7U << 24);
+
+    /*
+     * Select HSI as PLL source.
+     *
+     * PLLSRC = 0 -> HSI
+     */
     RCC_PLLCFGR = pllcfgr;
 
-    RCC_CFGR &= ~((7UL << 10) | (7UL << 13)); // Clear PPRE1 and PPRE2
-    RCC_CFGR |= RCC_CFGR_PPRE1_2; // Set PPRE1 to divide by 2 (APB1 clock = 42MHz)
+    /*
+     * Configure APB1 prescaler.
+     *
+     * PPRE1 = 100b -> divide by 2
+     *
+     * 84 MHz / 2 = 42 MHz APB1
+     */
+    RCC_CFGR &= ~(7UL << 10);
+    RCC_CFGR |= RCC_CFGR_PPRE1_2;
 
-    RCC_CR |= RCC_CR_PLLON; // Enable PLL
-    while (!(RCC_CR & RCC_CR_PLLRDY)==0U)
+    /*
+     * Enable PLL.
+     */
+    RCC_CR |= RCC_CR_PLLON;
+
+    /*
+     * Wait until PLL is ready.
+     */
+    while ((RCC_CR & RCC_CR_PLLRDY) == 0U)
+    {
         ;
-    
-    RCC_CFGR &= ~RCC_CFGR_SW_MASK; // Clear SW bits
-    RCC_CFGR |= RCC_CFGR_SW_PLL; // Set PLL as system clock
+    }
+
+    /*
+     * Select PLL as system clock.
+     */
+    RCC_CFGR &= ~RCC_CFGR_SW_MASK;
+    RCC_CFGR |= RCC_CFGR_SW_PLL;
+
+    /*
+     * Wait until PLL is actually selected as SYSCLK.
+     */
     while ((RCC_CFGR & RCC_CFGR_SWS_MASK) != RCC_CFGR_SWS_PLL)
+    {
         ;
+    }
 }
-#endif
 
-#ifdef USE_SYSCLK_42MHZ
-static void set_sysclk_42mhz_pll_from_hsi(void)
-{
-    uint32_t pllcfgr;
-
-    RCC_CR |= RCC_CR_HSION; // Enable HSI
-    while (!(RCC_CR & RCC_CR_HSIRDY)==0U)
-        ;
-    
-    RCC_APB1ENR |= RCC_APB1ENR_PWREN; // Enable PWR clock
-    PWR_CR &= ~PWR_CR_VOS_MASK; // Clear VOS bits
-    PWR_CR |= PWR_CR_VOS_SCALE2; // Set VOS to Scale 2 mode
-
-    FLASH_ACR |= FLASH_ACR_LATERNCY_1WS | FLASH_ACR_PRFTEN | FLASH_ACR_ICEN | FLASH_ACR_DCEN; // Set flash latency and enable caches
-
-    RCC_CR &= ~RCC_CR_PLLON; // Disable PLL
-    while ((RCC_CR & RCC_CR_PLLRDY) != 0U)
-        ;
-    
-    /* HSI=16MHz, PLLM=16, PLLN=336, PLLP=4, PLLQ=7 */
-    pllcfgr = (16U << 0);
-    pllcfgr |= (336U << 6);
-    pllcfgr |= (0U << 16); // PLLP=4 (01)
-    pllcfgr |= (7U << 24); // PLLQ=7
-    RCC_PLLCFGR = pllcfgr;
-
-    RCC_CFGR &= ~((7UL << 10) | (7UL << 13)); // Clear PPRE1 and PPRE2
-    RCC_CFGR |= RCC_CFGR_PPRE1_2; // Set PPRE1 to divide by 2 (APB1 clock = 21MHz)
-
-    RCC_CR |= RCC_CR_PLLON; // Enable PLL
-    while (!(RCC_CR & RCC_CR_PLLRDY)==0U)
-        ;
-    
-    RCC_CFGR &= ~RCC_CFGR_SW_MASK; // Clear SW bits
-    RCC_CFGR |= RCC_CFGR_SW_PLL; // Set PLL as system clock
-    while ((RCC_CFGR & RCC_CFGR_SWS_MASK) != RCC_CFGR_SWS_PLL)
-        ;
-}
-#endif
 
 extern "C" void SystemInit(void)
 {
-#ifdef USE_SYSCLK_84MHZ
     set_sysclk_84mhz_pll_from_hsi();
-#elif defined(USE_SYSCLK_42MHZ)
-    set_sysclk_42mhz_pll_from_hsi();
-#else
-    set_sysclk_16mhz_hsi();
-#endif
 }

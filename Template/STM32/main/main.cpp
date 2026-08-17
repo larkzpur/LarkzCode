@@ -1,6 +1,6 @@
-#include "platform/system.hpp"
-#include "infrastructure_gpio/gpio_led.hpp"
-#include "application/blink_use_case.hpp"
+#include "system.hpp"
+#include "gpio_led.hpp"
+#include "blink_use_case.hpp"
 
 int main(void)
 {
@@ -8,7 +8,7 @@ int main(void)
     SystemInit();
 
     // Create instances of GPIO_LED and BlinkUseCase 
-    infrastructrure_gpio::GPIO_LED led;
+    infrastructure_gpio::GPIO_LED led;
 
     // Create an instance of BlinkUseCase with the LED
     application::BlinkUseCase blinkUseCase(led);

@@ -1,0 +1,183 @@
+Archive member included to satisfy reference by file (symbol)
+
+main/libapp_main.a(main.cpp.obj)
+                              CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj (main)
+components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+                              CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj (SystemInit)
+components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+                              main/libapp_main.a(main.cpp.obj) (vtable for infrastructure_gpio::GPIO_LED)
+components/application/libapplication.a(blink_use_case.cpp.obj)
+                              main/libapp_main.a(main.cpp.obj) (application::BlinkUseCase::init())
+
+Discarded input sections
+
+ .text          0x00000000        0x0 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .data          0x00000000        0x0 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .bss           0x00000000        0x0 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .isr_vector    0x00000000      0x198 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .text.Reset_Handler
+                0x00000000       0x54 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .text.Default_Handler
+                0x00000000        0x2 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .debug_line    0x00000000       0x87 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .debug_line_str
+                0x00000000       0x96 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .debug_info    0x00000000      0x399 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .debug_abbrev  0x00000000       0x26 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .debug_aranges
+                0x00000000       0x28 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .debug_str     0x00000000      0x5bf CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .debug_rnglists
+                0x00000000       0x19 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .ARM.attributes
+                0x00000000       0x25 CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+ .text          0x00000000        0x0 main/libapp_main.a(main.cpp.obj)
+ .data          0x00000000        0x0 main/libapp_main.a(main.cpp.obj)
+ .bss           0x00000000        0x0 main/libapp_main.a(main.cpp.obj)
+ .text.startup.main
+                0x00000000       0x28 main/libapp_main.a(main.cpp.obj)
+ .debug_info    0x00000000      0x48c main/libapp_main.a(main.cpp.obj)
+ .debug_abbrev  0x00000000      0x30b main/libapp_main.a(main.cpp.obj)
+ .debug_loclists
+                0x00000000       0x41 main/libapp_main.a(main.cpp.obj)
+ .debug_aranges
+                0x00000000       0x20 main/libapp_main.a(main.cpp.obj)
+ .debug_rnglists
+                0x00000000       0x1f main/libapp_main.a(main.cpp.obj)
+ .debug_line    0x00000000      0x352 main/libapp_main.a(main.cpp.obj)
+ .debug_str     0x00000000      0x529 main/libapp_main.a(main.cpp.obj)
+ .comment       0x00000000       0x56 main/libapp_main.a(main.cpp.obj)
+ .debug_frame   0x00000000       0x2c main/libapp_main.a(main.cpp.obj)
+ .ARM.attributes
+                0x00000000       0x2e main/libapp_main.a(main.cpp.obj)
+ .text          0x00000000        0x0 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .data          0x00000000        0x0 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .bss           0x00000000        0x0 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .text.SystemInit
+                0x00000000       0xc4 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .debug_info    0x00000000       0xd5 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .debug_abbrev  0x00000000       0x92 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .debug_loclists
+                0x00000000       0x38 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .debug_aranges
+                0x00000000       0x20 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .debug_rnglists
+                0x00000000       0x14 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .debug_line    0x00000000      0x252 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .debug_str     0x00000000      0x20e components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .comment       0x00000000       0x56 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .debug_frame   0x00000000       0x20 components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .ARM.attributes
+                0x00000000       0x2e components/platform/libplatform.a(system_stm32f4xx.cpp.obj)
+ .group         0x00000000        0x8 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .group         0x00000000        0xc components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .text          0x00000000        0x0 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .data          0x00000000        0x0 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .bss           0x00000000        0x0 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .text._ZN19infrastructure_gpio8GPIO_LED4initEv
+                0x00000000       0x2c components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .text._ZN19infrastructure_gpio8GPIO_LED3setEv
+                0x00000000       0x10 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .text._ZN19infrastructure_gpio8GPIO_LED5clearEv
+                0x00000000       0x10 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .text._ZN19infrastructure_gpio8GPIO_LED6toggleEv
+                0x00000000       0x10 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .rodata._ZTSN11abstraction4GPIOE
+                0x00000000       0x15 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .rodata._ZTIN11abstraction4GPIOE
+                0x00000000        0x8 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .rodata._ZTSN19infrastructure_gpio8GPIO_LEDE
+                0x00000000       0x21 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .rodata._ZTIN19infrastructure_gpio8GPIO_LEDE
+                0x00000000        0xc components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .rodata._ZTVN19infrastructure_gpio8GPIO_LEDE
+                0x00000000       0x18 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .debug_info    0x00000000      0x42f components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .debug_abbrev  0x00000000      0x1fc components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .debug_aranges
+                0x00000000       0x38 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .debug_rnglists
+                0x00000000       0x25 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .debug_line    0x00000000      0x330 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .debug_str     0x00000000      0x4be components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .comment       0x00000000       0x56 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .debug_frame   0x00000000       0x50 components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .ARM.attributes
+                0x00000000       0x2e components/infrastructure_gpio/libinfrastructure_gpio.a(gpio_led.cpp.obj)
+ .text          0x00000000        0x0 components/application/libapplication.a(blink_use_case.cpp.obj)
+ .data          0x00000000        0x0 components/application/libapplication.a(blink_use_case.cpp.obj)
+ .bss           0x00000000        0x0 components/application/libapplication.a(blink_use_case.cpp.obj)
+ .text._ZN11application12BlinkUseCase4initEv
+                0x00000000        0x8 components/application/libapplication.a(blink_use_case.cpp.obj)
+ .text._ZN11application12BlinkUseCase3runEv
+                0x00000000       0x10 components/application/libapplication.a(blink_use_case.cpp.obj)
+ .text._ZN11application12BlinkUseCase12delay_cyclesEm
+                0x00000000       0x1c components/application/libapplication.a(blink_use_case.cpp.obj)
+ .debug_info    0x00000000      0x252 components/application/libapplication.a(blink_use_case.cpp.obj)
+ .debug_abbrev  0x00000000      0x19f components/application/libapplication.a(blink_use_case.cpp.obj)
+ .debug_loclists
+                0x00000000       0x37 components/application/libapplication.a(blink_use_case.cpp.obj)
+ .debug_aranges
+                0x00000000       0x30 components/application/libapplication.a(blink_use_case.cpp.obj)
+ .debug_rnglists
+                0x00000000       0x1f components/application/libapplication.a(blink_use_case.cpp.obj)
+ .debug_line    0x00000000      0x31d components/application/libapplication.a(blink_use_case.cpp.obj)
+ .debug_str     0x00000000      0x35f components/application/libapplication.a(blink_use_case.cpp.obj)
+ .comment       0x00000000       0x56 components/application/libapplication.a(blink_use_case.cpp.obj)
+ .debug_frame   0x00000000       0x50 components/application/libapplication.a(blink_use_case.cpp.obj)
+ .ARM.attributes
+                0x00000000       0x2e components/application/libapplication.a(blink_use_case.cpp.obj)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00080000         xr
+RAM              0x20000000         0x00020000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj
+LOAD main/libapp_main.a
+LOAD components/platform/libplatform.a
+LOAD components/infrastructure_gpio/libinfrastructure_gpio.a
+LOAD components/application/libapplication.a
+
+.text           0x08000000        0x0
+ *(.vectors)
+ *(.text*)
+ *(.rodata*)
+                0x08000000                        . = ALIGN (0x4)
+
+.glue_7         0x08000000        0x0
+ .glue_7        0x08000000        0x0 linker stubs
+
+.glue_7t        0x08000000        0x0
+ .glue_7t       0x08000000        0x0 linker stubs
+
+.vfp11_veneer   0x08000000        0x0
+ .vfp11_veneer  0x08000000        0x0 linker stubs
+
+.v4_bx          0x08000000        0x0
+ .v4_bx         0x08000000        0x0 linker stubs
+
+.data           0x20000000        0x0 load address 0x08000000
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data*)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _edata = .
+
+.bss            0x20000000        0x0 load address 0x08000000
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sbss = .
+ *(.bss*)
+ *(COMMON)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _ebss = .
+
+/DISCARD/
+ *(.eh_frame)
+                0x20020000                        _estack = (ORIGIN (RAM) + LENGTH (RAM))
+OUTPUT(nucleo_f411_blink.elf elf32-littlearm)
+LOAD linker stubs

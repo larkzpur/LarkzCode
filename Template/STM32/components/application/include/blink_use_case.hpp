@@ -1,6 +1,6 @@
 #pragma once
 
-#include "abstraction/gpio.hpp"
+#include "gpio.hpp"
 #include <stdint.h>
 
 namespace application

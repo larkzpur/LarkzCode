@@ -1,5 +1,5 @@
-#include "application/blink_use_case.hpp"
-#include "board_config/config.hpp"
+#include "blink_use_case.hpp"
+#include "config.hpp"
 
 namespace application
 {

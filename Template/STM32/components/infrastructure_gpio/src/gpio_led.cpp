@@ -1,7 +1,7 @@
-#include "infrastructure_gpio/gpio_led.hpp"
-#include "board_config/config.hpp"
+#include "gpio_led.hpp"
+#include "config.hpp"
 
-namespace infrastructrure_gpio
+namespace infrastructure_gpio
 {
     void GPIO_LED::init()
     {

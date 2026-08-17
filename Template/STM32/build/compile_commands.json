@@ -1,0 +1,38 @@
+[
+{
+  "directory": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build",
+  "command": "\"C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\12.2 mpacbti-rel1\\bin\\arm-none-eabi-gcc.exe\" -DUSE_SYSCLK_84MHZ=1 -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/main -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/main/../components/platform/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/platform/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/infrastructure_gpio/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/abstraction/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/board_config/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/application/include -g -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=soft -fno-exceptions -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -Og -g3 -O2 -o CMakeFiles\\nucleo_f411_blink.elf.dir\\startup\\startup_stm32f411xe.s.obj -c D:\\Users\\comia\\Documents\\VSCode\\LarkzCode\\Template\\STM32\\startup\\startup_stm32f411xe.s",
+  "file": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/startup/startup_stm32f411xe.s",
+  "output": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj"
+},
+{
+  "directory": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build",
+  "command": "\"C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\12.2 mpacbti-rel1\\bin\\arm-none-eabi-g++.exe\" -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/platform/include -g -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=soft -fno-exceptions -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -O2 -o components\\platform\\CMakeFiles\\platform.dir\\src\\system_stm32f4xx.cpp.obj -c D:\\Users\\comia\\Documents\\VSCode\\LarkzCode\\Template\\STM32\\components\\platform\\src\\system_stm32f4xx.cpp",
+  "file": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/platform/src/system_stm32f4xx.cpp",
+  "output": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/platform/CMakeFiles/platform.dir/src/system_stm32f4xx.cpp.obj"
+},
+{
+  "directory": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build",
+  "command": "\"C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\12.2 mpacbti-rel1\\bin\\arm-none-eabi-g++.exe\" -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/platform/include -g -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=soft -fno-exceptions -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -O2 -o components\\platform\\CMakeFiles\\platform.dir\\src\\cxx_runtime.cpp.obj -c D:\\Users\\comia\\Documents\\VSCode\\LarkzCode\\Template\\STM32\\components\\platform\\src\\cxx_runtime.cpp",
+  "file": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/platform/src/cxx_runtime.cpp",
+  "output": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/platform/CMakeFiles/platform.dir/src/cxx_runtime.cpp.obj"
+},
+{
+  "directory": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build",
+  "command": "\"C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\12.2 mpacbti-rel1\\bin\\arm-none-eabi-g++.exe\" -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/infrastructure_gpio/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/abstraction/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/board_config/include -g -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=soft -fno-exceptions -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -O2 -o components\\infrastructure_gpio\\CMakeFiles\\infrastructure_gpio.dir\\src\\gpio_led.cpp.obj -c D:\\Users\\comia\\Documents\\VSCode\\LarkzCode\\Template\\STM32\\components\\infrastructure_gpio\\src\\gpio_led.cpp",
+  "file": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/infrastructure_gpio/src/gpio_led.cpp",
+  "output": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/infrastructure_gpio/CMakeFiles/infrastructure_gpio.dir/src/gpio_led.cpp.obj"
+},
+{
+  "directory": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build",
+  "command": "\"C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\12.2 mpacbti-rel1\\bin\\arm-none-eabi-g++.exe\" -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/application/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/abstraction/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/board_config/include -g -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=soft -fno-exceptions -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -O2 -o components\\application\\CMakeFiles\\application.dir\\src\\blink_use_case.cpp.obj -c D:\\Users\\comia\\Documents\\VSCode\\LarkzCode\\Template\\STM32\\components\\application\\src\\blink_use_case.cpp",
+  "file": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/application/src/blink_use_case.cpp",
+  "output": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/components/application/CMakeFiles/application.dir/src/blink_use_case.cpp.obj"
+},
+{
+  "directory": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build",
+  "command": "\"C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\12.2 mpacbti-rel1\\bin\\arm-none-eabi-g++.exe\" -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/main -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/main/../components/platform/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/platform/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/infrastructure_gpio/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/abstraction/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/board_config/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/application/include -g -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=soft -fno-exceptions -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -O2 -o main\\CMakeFiles\\app_main.dir\\main.cpp.obj -c D:\\Users\\comia\\Documents\\VSCode\\LarkzCode\\Template\\STM32\\main\\main.cpp",
+  "file": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/main/main.cpp",
+  "output": "D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/main/CMakeFiles/app_main.dir/main.cpp.obj"
+}
+]

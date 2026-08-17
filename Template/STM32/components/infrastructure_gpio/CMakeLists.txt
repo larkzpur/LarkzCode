@@ -1,5 +1,5 @@
 add_library(infrastructure_gpio 
-    src/gpio.cpp
+    src/gpio_led.cpp
 )
 
 target_include_directories(infrastructure_gpio PUBLIC
@@ -11,7 +11,7 @@ target_link_libraries(infrastructure_gpio PUBLIC
     board_config
 )
 
-target_compile_options(
+target_compile_options(infrastructure_gpio PRIVATE
     -mcpu=cortex-m4
     -mthumb
     -mfpu=fpv4-sp-d16

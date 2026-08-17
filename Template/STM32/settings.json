@@ -1,1 +1,11 @@
-
+{
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "c": "echo Embedded firmware project detected. Cmake Build, then OpenOCD Flash, or press F5 for Debug NUCLE-F411RE."
+    },
+    "files.associations": {
+        "*.c": "c",
+        "*.h": "c"
+    },
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_"
+}
