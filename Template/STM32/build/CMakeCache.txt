@@ -224,12 +224,6 @@ CMAKE_TOOLCHAIN_FILE:FILEPATH=D:/Users/comia/Documents/VSCode/LarkzCode/Template
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Run core clock at 42MHz from PLL (HSI source)
-NUCLEO_SYSCLK_42MHZ:BOOL=OFF
-
-//Run core clock at 84MHz from PLL (HSI source)
-NUCLEO_SYSCLK_84MHZ:BOOL=OFF
-
 //Value Computed by CMake
 nucleo_f411_blink_BINARY_DIR:STATIC=D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build
 

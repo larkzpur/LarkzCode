@@ -1,6 +1,6 @@
 #pragma once
 
-#include "gpio.hpp"
+#include "gpio_led.hpp"
 #include <stdint.h>
 
 namespace application
@@ -8,12 +8,13 @@ namespace application
     class BlinkUseCase
     {
     public:
-        BlinkUseCase(abstraction::GPIO &led) : m_led(led){}
+        BlinkUseCase(infrastructure_gpio::GPIO_LED &led) : m_led(led) {}
         void init();
         void run();
+        void alt_run();
 
     private:
         static void delay_cycles(volatile uint32_t cycles);
-        abstraction::GPIO &m_led;
+        infrastructure_gpio::GPIO_LED &m_led;
     };
 }

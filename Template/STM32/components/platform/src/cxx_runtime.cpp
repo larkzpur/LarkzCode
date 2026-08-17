@@ -11,6 +11,11 @@ static size_t heap_pos = 0;
 
 extern "C"
 {
+    void __libc_init_array()
+    {
+        // No static constructors are used in this minimal embedded setup.
+    }
+
     void *malloc(size_t size)
     {
         if (heap_pos + size > sizeof(heap))

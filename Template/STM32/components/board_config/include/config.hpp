@@ -17,8 +17,7 @@ namespace board_config
     constexpr uint32_t GPIO_MODER_OFFSET = 0x00UL;       //GPIO port mode register offset
     constexpr uint32_t GPIO_ODR_OFFSET = 0x14UL;        //GPIO port output data register offset
 
-    //Delay cycles for 1 second (assuming 16 MHz clock)
-    //Formula: t_delay = (N*C)/f_CPU
-    //where N = loop countm C = 6 cycles/iteration, f_CPU = core clock
-    constexpr uint32_t DELAY_1_SECOND = 800000UL; //1 second delay cycles
+    // Delay cycles for ~1 second at 84 MHz when each loop iteration takes ~6 cycles.
+    // Approximation: (84,000,000 / 6) ~= 14,000,000 iterations.
+    constexpr uint32_t DELAY_1_SECOND = 14000000UL; // ~1 second delay cycles
 }

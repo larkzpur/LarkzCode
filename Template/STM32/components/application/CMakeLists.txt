@@ -9,6 +9,7 @@ target_include_directories(application PUBLIC
 target_link_libraries(application PUBLIC
     abstraction
     board_config
+    infrastructure_gpio
 )
 
 target_compile_options(application PRIVATE

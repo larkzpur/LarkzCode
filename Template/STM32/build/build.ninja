@@ -53,7 +53,7 @@ build CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj: AS
   CONFIG = Debug
   DEFINES = -DUSE_SYSCLK_84MHZ=1
   DEP_FILE = CMakeFiles\nucleo_f411_blink.elf.dir\startup\startup_stm32f411xe.s.obj.d
-  FLAGS = -g -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=soft -fno-exceptions -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -Og -g3 -O2
+  FLAGS = -g -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=soft -fno-exceptions -fno-rtti -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -Og -g3 -O2
   INCLUDES = -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/main -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/main/../components/platform/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/platform/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/infrastructure_gpio/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/abstraction/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/board_config/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/application/include
   OBJECT_DIR = CMakeFiles\nucleo_f411_blink.elf.dir
   OBJECT_FILE_DIR = CMakeFiles\nucleo_f411_blink.elf.dir\startup
@@ -67,11 +67,11 @@ build CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj: AS
 #############################################
 # Link the executable nucleo_f411_blink.elf
 
-build nucleo_f411_blink.elf: CXX_EXECUTABLE_LINKER__nucleo_f411_blink.2eelf_Debug CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj | main/libapp_main.a components/platform/libplatform.a components/infrastructure_gpio/libinfrastructure_gpio.a components/application/libapplication.a || components/application/libapplication.a components/infrastructure_gpio/libinfrastructure_gpio.a components/platform/libplatform.a main/libapp_main.a
+build nucleo_f411_blink.elf: CXX_EXECUTABLE_LINKER__nucleo_f411_blink.2eelf_Debug CMakeFiles/nucleo_f411_blink.elf.dir/startup/startup_stm32f411xe.s.obj | main/libapp_main.a components/platform/libplatform.a components/application/libapplication.a components/infrastructure_gpio/libinfrastructure_gpio.a || components/application/libapplication.a components/infrastructure_gpio/libinfrastructure_gpio.a components/platform/libplatform.a main/libapp_main.a
   CONFIG = Debug
   FLAGS = -g
-  LINK_FLAGS = -TD:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/STM32F411RETx_FLASH.ld -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=soft -Wl,--gc-sections -Wl,-Map=nucleo_f411_blink.map -nostartfiles -nostdlib
-  LINK_LIBRARIES = main/libapp_main.a  components/platform/libplatform.a  components/infrastructure_gpio/libinfrastructure_gpio.a  components/application/libapplication.a
+  LINK_FLAGS = -TD:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/STM32F411RETx_FLASH.ld -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=soft -Wl,--gc-sections -Wl,-Map=nucleo_f411_blink.map -nostartfiles -nostdlib -lsupc++ -lgcc
+  LINK_LIBRARIES = main/libapp_main.a  components/platform/libplatform.a  components/application/libapplication.a  components/infrastructure_gpio/libinfrastructure_gpio.a
   OBJECT_DIR = CMakeFiles\nucleo_f411_blink.elf.dir
   POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\Users\comia\Documents\VSCode\LarkzCode\Template\STM32\build && arm-none-eabi-objcopy -O ihex D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/nucleo_f411_blink.elf nucleo_f411_blink.hex && arm-none-eabi-objcopy -O binary D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/nucleo_f411_blink.elf nucleo_f411_blink.bin && arm-none-eabi-size D:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/build/nucleo_f411_blink.elf"
   PRE_LINK = cd .
@@ -312,13 +312,13 @@ build components/infrastructure_gpio/rebuild_cache: phony components/infrastruct
 #############################################
 # Order-only phony target for application
 
-build cmake_object_order_depends_target_application: phony || .
+build cmake_object_order_depends_target_application: phony || cmake_object_order_depends_target_infrastructure_gpio
 
 build components/application/CMakeFiles/application.dir/src/blink_use_case.cpp.obj: CXX_COMPILER__application_unscanned_Debug D$:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/application/src/blink_use_case.cpp || cmake_object_order_depends_target_application
   CONFIG = Debug
   DEP_FILE = components\application\CMakeFiles\application.dir\src\blink_use_case.cpp.obj.d
   FLAGS = -g -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=soft -fno-exceptions -ffunction-sections -fdata-sections -Wall -Wextra -Wpedantic -O2
-  INCLUDES = -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/application/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/abstraction/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/board_config/include
+  INCLUDES = -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/application/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/abstraction/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/board_config/include -ID:/Users/comia/Documents/VSCode/LarkzCode/Template/STM32/components/infrastructure_gpio/include
   OBJECT_DIR = components\application\CMakeFiles\application.dir
   OBJECT_FILE_DIR = components\application\CMakeFiles\application.dir\src
   TARGET_SUPPORT_DIR = components\application\CMakeFiles\application.dir
@@ -331,7 +331,7 @@ build components/application/CMakeFiles/application.dir/src/blink_use_case.cpp.o
 #############################################
 # Link the static library components\application\libapplication.a
 
-build components/application/libapplication.a: CXX_STATIC_LIBRARY_LINKER__application_Debug components/application/CMakeFiles/application.dir/src/blink_use_case.cpp.obj
+build components/application/libapplication.a: CXX_STATIC_LIBRARY_LINKER__application_Debug components/application/CMakeFiles/application.dir/src/blink_use_case.cpp.obj || components/infrastructure_gpio/libinfrastructure_gpio.a
   CONFIG = Debug
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = components\application\CMakeFiles\application.dir

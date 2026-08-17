@@ -10,7 +10,7 @@ SECTIONS
 {
     .text :
     {
-        KEEP(*(.vectors))
+        KEEP(*(.isr_vector))
         *(.text*)
         *(.rodata*)
         . = ALIGN(4);
@@ -24,6 +24,7 @@ SECTIONS
         . = ALIGN(4);
         _edata = .;
     } > RAM AT > FLASH
+    _sidata = LOADADDR(.data);
 
     .bss :
     {

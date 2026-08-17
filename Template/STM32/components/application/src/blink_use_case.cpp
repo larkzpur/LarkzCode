@@ -10,9 +10,21 @@ namespace application
 
     void BlinkUseCase::run()
     {
-        for(;;)
+        for (;;)
         {
             m_led.toggle();
+        }
+    }
+
+    void BlinkUseCase::alt_run()
+    {
+        for (;;)
+        {
+            m_led.set();
+            delay_cycles(board_config::DELAY_1_SECOND / 10U);
+            m_led.clear();
+
+            delay_cycles(3U * board_config::DELAY_1_SECOND);
         }
     }
 

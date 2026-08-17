@@ -47,6 +47,7 @@ target_compile_options(${PROJECT_NAME}.elf PRIVATE
     -mfpu=${MFPU}
     -mfloat-abi=${MFLOAT_ABI}
     -fno-exceptions
+    -fno-rtti
     -ffunction-sections
     -fdata-sections
     -Wall
@@ -70,6 +71,8 @@ target_link_options(${PROJECT_NAME}.elf PRIVATE
     -Wl,-Map=${PROJECT_NAME}.map
     -nostartfiles
     -nostdlib
+    -lsupc++
+    -lgcc
 )
 
 add_custom_command(TARGET ${PROJECT_NAME}.elf POST_BUILD
