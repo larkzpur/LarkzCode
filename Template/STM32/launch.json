@@ -1,1 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug NUCLEO-F411RE",
+            "cmd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/nucleo_f411_blink.elf",
+            "preLaunchTask": "CMake build",
+            "request": "launch",
+            "type": "openocd",
+            "serverpath": "C:\Users\comia\AppData\Local\Microsoft\WinGet\Packages\xpack-dev-tools.openocd-xpack_Microsoft.Winget.Source_8wekyb3d8bbwe\xpack-openocd-0.12.0-7\bin\openocd.exe",
+            "gdbPath": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/12.2 mpacbti-rel1/bin/arm-none-eabi-gcc.exe",
+            "showDevDebugOutput": "raw",
+            "configFiles": [
+                "${workspaceFolder}/openocd.cfg"
+            ],
+            "runToEntryPoint": "main",
+            "device": "STM32F411RE"
+        }
+    ]
+}
 

@@ -1,1 +1,58 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake Configure",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "-S",
+                ".",
+                "-B",
+                "build",
+                "-G",
+                "Ninja",
+                "-DCMAKE_BUILD_TYPE=Debug"
+            ],
+            "group": "build",
+            "problemMatcher": [],
+        },
+        {
+            "label": "CMake build",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build"
+            ],
+            "dependsOn": "CMake Configure",
+            "dependsOrder": "sequence",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "OpenOCD Flash",
+            "type": "shell",
+            "command": "openocd",
+            "args": [
+                "-f",
+                "openocd",
+                "-c",
+                "program build/nucleo_f411_blink.elf verify reset exit"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Firmware (Build + Flash)",
+            "dependsOn": [
+                "CMake build",
+                "OpenOCD Flash"
+            ],
+            "dependsOrder": "sequence",
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}
 
